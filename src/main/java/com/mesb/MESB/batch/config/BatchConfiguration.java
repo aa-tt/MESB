@@ -75,13 +75,13 @@ public class BatchConfiguration {
 			public Errr mapRow(ResultSet arg0, int arg1) throws SQLException {
 				// TODO Auto-generated method stub
 				Errr errr = new Errr();
-				errr.setErrId(arg0.getInt("err_id"));
-				errr.setErrMsg(arg0.getString("err_msg"));
-				errr.setErrUrl(arg0.getString("err_url"));
+				errr.setErrId(arg0.getInt(1));
+				errr.setErrMsg(arg0.getString(2));
+				errr.setErrUrl(arg0.getString(3));
 				return errr;
 			}
 		});
-    	int counter = 0;
+    	/*int counter = 0;
     	ExecutionContext executionContext = new ExecutionContext();
     	reader.open(executionContext);
     	Object errRecord = new Object();
@@ -89,7 +89,7 @@ public class BatchConfiguration {
     		errRecord = reader.read();
     	    counter++;
     	}
-    	reader.close();
+    	reader.close();*/
     	return reader;
     }
 
@@ -112,6 +112,7 @@ public class BatchConfiguration {
     	FlatFileItemWriter<Errr> writer = new FlatFileItemWriter<Errr>();
     	writer.setResource(new ClassPathResource("err-output.txt"));
     	writer.setLineAggregator(new DelimitedLineAggregator<Errr>() {{
+    		setDelimiter(",");
     		setFieldExtractor(new BeanWrapperFieldExtractor<Errr>() {{
     			setNames(new String[] {"errId", "errMsg", "errUrl"});
     		}});
