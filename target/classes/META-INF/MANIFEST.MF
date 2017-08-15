@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: MESB
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: aa
+Implementation-Vendor-Id: com.mesb
+Build-Jdk: 1.8.0_92
+Implementation-URL: http://projects.spring.io/spring-boot/MESB/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+

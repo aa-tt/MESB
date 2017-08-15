@@ -1,0 +1,7 @@
+DROP TABLE errr IF EXISTS;
+
+CREATE TABLE errr  (
+    err_id BIGINT IDENTITY NOT NULL PRIMARY KEY,
+    err_msg VARCHAR(20),
+    err_url VARCHAR(20)
+);
